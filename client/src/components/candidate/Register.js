@@ -1,7 +1,7 @@
 import React ,{Component } from 'react';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import  APICandidate  from '../../redux/actions/candidateProfileAction';
+
+
 import  candidateActions  from '../../redux/actions/candidateActions';
 
 import { connect } from 'react-redux';
@@ -15,7 +15,8 @@ import PersonalInfo from "../../views/Candidate/PersonalInfo";
 import ContactInfo from "../../views/Candidate/contactInfo";
 import UploadFile from "../../views/Candidate/uploadFile";
 import CreateAccount from "../../views/Candidate/createAccount";
-import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+
+
 import  APIQualification  from '../../redux/actions/qualificationAction';
 
 class  CandidateProfile extends Component {
@@ -153,15 +154,15 @@ class  CandidateProfile extends Component {
         const {activeStep} = this.state;
         let status = true;
         let personalInfoError = "";
-        if (this.state.firstName == "") {
+        if (this.state.firstName === "") {
             status = false;
             personalInfoError += "\n First Name Cannot be Empty";
         }
-        if (this.state.lastName == "") {
+        if (this.state.lastName === "") {
             status = false;
             personalInfoError += "\n Last Name Cannot be Empty";
         }
-        if (this.state.DOB == "") {
+        if (this.state.DOB === "") {
             status = false;
             personalInfoError += "\n DOB  Cannot be Empty";
         }
@@ -171,15 +172,15 @@ class  CandidateProfile extends Component {
     validateFormAccountInfo =()=> {
             let status = true;
                 let accountInfoError = "";
-                if (this.state.userName == "") {
+                if (this.state.userName === "") {
                     status = false;
                     accountInfoError += "\n User Name Cannot be Empty";
                 }
-                if (this.state.password == "") {
+                if (this.state.password === "") {
                     status = false;
                     accountInfoError += "\n Password Cannot be Empty";
                 }
-                if (this.state.conformPassword == "") {
+                if (this.state.conformPassword === "") {
                     status = false;
                     accountInfoError += "\n conformPassword  Cannot be Empty";
                 }
@@ -196,27 +197,27 @@ class  CandidateProfile extends Component {
         let status = true;
 
             let contactInfoError = "";
-            if (this.state.telephone == "") {
+            if (this.state.telephone === "") {
                         status = false;
                 contactInfoError += "\n telephone Cannot be Empty";
                     }
-                    if (this.state.email == "") {
+                    if (this.state.email === "") {
                         status = false;
                         contactInfoError += "\n email Cannot be Empty";
                     }
-                    if (this.state.street == "") {
+                    if (this.state.street === "") {
                         status = false;
                         contactInfoError += "\n street  Cannot be Empty";
                     }
-                    if (this.state.city == "") {
+                    if (this.state.city === "") {
                         status = false;
                         contactInfoError += "\n city  Cannot be Empty";
                     }
-                    if (this.state.country == "") {
+                    if (this.state.country === "") {
                         status = false;
                         contactInfoError += "\n country  Cannot be Empty";
                     }
-                    if (this.state.zip == "") {
+                    if (this.state.zip === "") {
                         status = false;
                         contactInfoError += "\n zip  Cannot be Empty";
                     }
