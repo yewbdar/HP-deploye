@@ -1,4 +1,4 @@
-const Position = require('./../models/position');
+const Position = require('./../models/Position');
 
 module.exports = {
     getAll:function(req,res){
