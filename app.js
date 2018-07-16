@@ -18,7 +18,7 @@ const url = process.env.MONGODB_URI || "mongodb://localhost:27017/hp";
 // mongoose.connect(url)
 try {
     mongoose.connect(url, {
-        useMongoClient: true
+        // useMongoClient: true
     })    
 } catch (error) {
     
