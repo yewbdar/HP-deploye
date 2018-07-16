@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 var session = require('express-session');
-
+const path = require("path");
 const app = express();
 const router = express.Router();
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/hp";
@@ -51,9 +51,14 @@ app.use(session({
                 httpOnly: false
             }
 }));
-
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 app.use('/hp-api', router);
 
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 /** start server */
 app.listen(port, () => {
     console.log(`HP-Server started at port: ${port} Lets get the party going`);
